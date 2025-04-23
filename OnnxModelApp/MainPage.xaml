@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OnnxModelApp.MainPage"
+             Title="MainPage">     
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="20" VerticalOptions="Center" HorizontalOptions="Center">
+
+            <Button Text="🔮 Predict Exercise" Clicked="PredictButton_Clicked"
+                    BackgroundColor="#3F51B5" TextColor="White" CornerRadius="10" Padding="10" FontSize="18"/>
+
+            <Frame BackgroundColor="#E3F2FD" CornerRadius="12" Padding="15" HasShadow="True">
+                <Label x:Name="ExerciseLabel" FontSize="16" HorizontalOptions="Center" TextColor="#0D47A1"
+                       Text="Exercise prediction appears here"/>
+            </Frame>
+
+            <Frame BackgroundColor="#E8F5E9" CornerRadius="12" Padding="15" HasShadow="True">
+                <Label x:Name="MuscleLabel" FontSize="16" HorizontalOptions="Center" TextColor="#1B5E20"
+                       Text="Muscle activation prediction appears here"/>
+            </Frame>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

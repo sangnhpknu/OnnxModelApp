@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OnnxModelApp.TrackingPage"
+             Title="TrackingPage">
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+            <Grid>
+                <Image Source="logo.png" Aspect="AspectFit" HeightRequest="120" />
+            </Grid>
+            <!--Arm Image with Activated Muscle Points--> 
+            <Grid>
+                <Image Source="arm_muscle.png" Aspect="AspectFit" HeightRequest="300" />
+            </Grid>
+
+             <!--Performance of Muscle Activation--> 
+            <Label Text="Muscle Activation Performance" FontSize="18" FontAttributes="Bold" />
+            <ProgressBar x:Name="PerformanceBar" Progress="0.0" HeightRequest="20" />
+
+             <!--Name of Exercise--> 
+            <!--<Label Text="Exercise Detected" FontSize="18" FontAttributes="Bold" />
+            <Label x:Name="ExerciseNameLabel" Text="Detecting.." FontSize="16" TextColor="Gray" />-->
+
+             <!--Timer--> 
+            <Label Text="Time Working" FontSize="18" FontAttributes="Bold" />
+            <Label x:Name="TimerLabel" Text="00:00:00" FontSize="16" TextColor="Gray" />
+
+             <!--Counting Reps--> 
+            <Label Text="Repetitions" FontSize="18" FontAttributes="Bold" />
+            <Label x:Name="Repetitions" Text="0" FontSize="16" TextColor="Gray" />
+
+             <!--Update Button (for demo purposes)--> 
+            <Button Text="Start" Clicked="OnUpdateDataClicked" 
+                    BackgroundColor="#007BFF" TextColor="White" CornerRadius="10" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

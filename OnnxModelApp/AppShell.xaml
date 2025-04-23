@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="OnnxModelApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:OnnxModelApp"
+    Shell.FlyoutBehavior="Disabled"
+    Title="OnnxModelApp">
+
+    <FlyoutItem>
+        <ShellContent
+            Title="Tracking"
+            Icon="me_icon.png"
+            ContentTemplate="{DataTemplate local:TrackingPage}"
+            Route="TrackingPage" />
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+        <ShellContent
+            Title="Report"
+            ContentTemplate="{DataTemplate local:ReportPage}"
+            Route="ReportPage" />
+    </FlyoutItem>
+</Shell>

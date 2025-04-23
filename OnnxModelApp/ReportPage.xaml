@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sfChart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts"
+             x:Class="OnnxModelApp.ReportPage"
+             Title="ReportPage">
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+            <!-- Title -->
+            <Label Text="Workout Report" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+
+            <!-- Chart -->
+            <sfChart:SfCartesianChart>
+
+                <sfChart:SfCartesianChart.Legend>
+                    <sfChart:ChartLegend Placement="Top"/>
+                </sfChart:SfCartesianChart.Legend>
+
+                
+                <!-- X-Axis -->
+                <sfChart:SfCartesianChart.XAxes>
+                    <sfChart:CategoryAxis />
+                </sfChart:SfCartesianChart.XAxes>
+
+                <!-- Y-Axis -->
+                <sfChart:SfCartesianChart.YAxes>
+                    <sfChart:NumericalAxis />
+                </sfChart:SfCartesianChart.YAxes>
+
+                <!-- Bar Series for Exercises -->
+                <sfChart:ColumnSeries 
+                    ItemsSource="{Binding ChartData}" 
+                    XBindingPath="Date" 
+                    YBindingPath="ExercisesCount"
+                    Label="Number of Exercises" />
+
+                <!-- Line Series for Time Executed -->
+                <sfChart:LineSeries 
+                    ItemsSource="{Binding ChartData}" 
+                    XBindingPath="Date" 
+                    YBindingPath="TimeSpent"
+                    Label="Time Executed (mins)" />
+            </sfChart:SfCartesianChart>
+
+            <!-- Detail Section -->
+            <Label Text="Select a Date for Details" FontSize="18" FontAttributes="Bold" />
+            <DatePicker x:Name="DatePicker" Date="{Binding SelectedDate}" />
+
+            <!-- Exercise List -->
+            <Label Text="Exercises Executed on Selected Date" FontSize="18" FontAttributes="Bold" />
+            <ListView ItemsSource="{Binding ExercisesForSelectedDate}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding ExerciseName}" Detail="{Binding Duration}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
