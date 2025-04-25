@@ -1,37 +1,52 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OnnxModelApp.TrackingPage"
              Title="TrackingPage">
+
     <ScrollView>
-        <StackLayout Padding="20" Spacing="15">
-            <Grid>
-                <Image Source="logo.png" Aspect="AspectFit" HeightRequest="120" />
-            </Grid>
-            <!--Arm Image with Activated Muscle Points--> 
-            <Grid>
-                <Image Source="arm_muscle.png" Aspect="AspectFit" HeightRequest="300" />
-            </Grid>
+        <StackLayout Padding="20" Spacing="15" VerticalOptions="Start">
 
-             <!--Performance of Muscle Activation--> 
-            <Label Text="Muscle Activation Performance" FontSize="18" FontAttributes="Bold" />
-            <ProgressBar x:Name="PerformanceBar" Progress="0.0" HeightRequest="20" />
+            <!-- Logo + Title -->
+            <Image Source="logo.png" HeightRequest="60" HorizontalOptions="Center" />
+            <Label Text="Smart Tracking" FontSize="22" FontAttributes="Bold" 
+                   HorizontalOptions="Center" TextColor="#3F51B5" />
 
-             <!--Name of Exercise--> 
-            <!--<Label Text="Exercise Detected" FontSize="18" FontAttributes="Bold" />
-            <Label x:Name="ExerciseNameLabel" Text="Detecting.." FontSize="16" TextColor="Gray" />-->
+            <!-- Arm Muscle Image -->
+            <Frame BackgroundColor="#FAFAFA" CornerRadius="15" Padding="10" HasShadow="True">
+                <StackLayout>
+                    <Image Source="arm_muscle.png" Aspect="AspectFit" HeightRequest="220" />
+                    <Label Text="Real-time activated muscle group"
+                           FontSize="14" TextColor="Gray" HorizontalOptions="Center"/>
+                </StackLayout>
+            </Frame>
 
-             <!--Timer--> 
-            <Label Text="Time Working" FontSize="18" FontAttributes="Bold" />
-            <Label x:Name="TimerLabel" Text="00:00:00" FontSize="16" TextColor="Gray" />
+            <!-- Muscle Activation Performance -->
+            <Frame BackgroundColor="#E8F5E9" CornerRadius="12" Padding="15" HasShadow="True">
+                <StackLayout>
+                    <Label Text="💪 Muscle Activation" FontSize="18" FontAttributes="Bold" TextColor="#1B5E20"/>
+                    <ProgressBar x:Name="PerformanceBar" Progress="0.0" HeightRequest="18" />
+                </StackLayout>
+            </Frame>
 
-             <!--Counting Reps--> 
-            <Label Text="Repetitions" FontSize="18" FontAttributes="Bold" />
-            <Label x:Name="Repetitions" Text="0" FontSize="16" TextColor="Gray" />
+            <!-- Timer + Reps Section -->
+            <Frame BackgroundColor="#E3F2FD" CornerRadius="12" Padding="15" HasShadow="True">
+                <StackLayout Orientation="Horizontal" Spacing="25">
+                    <StackLayout>
+                        <Label Text="⏱ Time" FontSize="16" FontAttributes="Bold" />
+                        <Label x:Name="TimerLabel" Text="00:00:00" FontSize="16" TextColor="#0D47A1" />
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="🔁 Reps" FontSize="16" FontAttributes="Bold" />
+                        <Label x:Name="Repetitions" Text="0" FontSize="16" TextColor="#0D47A1" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
 
-             <!--Update Button (for demo purposes)--> 
-            <Button Text="Start" Clicked="OnUpdateDataClicked" 
-                    BackgroundColor="#007BFF" TextColor="White" CornerRadius="10" />
+            <!-- Action Button -->
+            <Button Text="🚀 Start Tracking" Clicked="OnUpdateDataClicked"
+                    BackgroundColor="#3F51B5" TextColor="White" FontSize="18"
+                    CornerRadius="15" Padding="12" HorizontalOptions="Fill" />
+
         </StackLayout>
     </ScrollView>
 </ContentPage>

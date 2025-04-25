@@ -6,6 +6,9 @@
              Title="ReportPage">
     <ScrollView>
         <StackLayout Padding="20" Spacing="15">
+            <!-- Logo / Title -->
+            <Image Source="logo.png" HeightRequest="60" HorizontalOptions="Center" />
+
             <!-- Title -->
             <Label Text="Workout Report" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
 
